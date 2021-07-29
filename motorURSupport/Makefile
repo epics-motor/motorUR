@@ -23,11 +23,10 @@ INC += urcl/tcp_socket.h
 INC += urcl/server.h
 INC += urcl/script_sender.h
 
-
-LIB_INSTALLS    += ../ur_rtde/lib/librtde.a
-BIN_INSTALLS    += ../ur_rtde/lib/librtde.so
-BIN_INSTALLS    += ../ur_rtde/lib/librtde.so.1.4
-BIN_INSTALLS    += ../ur_rtde/lib/librtde.so.1.4.4
+LIB_INSTALLS    += ../os/rhel8/librtde.a
+BIN_INSTALLS    += ../os/rhel8/librtde.so
+BIN_INSTALLS    += ../os/rhel8/librtde.so.1.4
+BIN_INSTALLS    += ../os/rhel8/librtde.so.1.4.4
 
 #=============================
 
