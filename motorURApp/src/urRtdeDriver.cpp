@@ -59,9 +59,12 @@ URController::URController(const char *portName, const char *URPortName, int num
   /* Connect to UR controller */
   // TODO: call rtde connect method
 
-  control_interface_ = rtde_control(URPortName);
-  receive_interface_ = rtde_receive(URPortName);
-  std::vector<double> init_q = receive_interface_.getActualQ();
+  RTDEControlInterface rtde_control(URPortName);
+  RTDEReceiveInterface rtde_receive(URPortName);
+  rtde_control_ = &rtde_control;
+  rtde_receive_ = &rtde_receive;
+
+  std::vector<double> init_q = rtde_receive_->getActualQ();
 
   /*
   if (status) {
@@ -148,7 +151,7 @@ asynStatus URController::poll(bool *moving)
 { 
   asynStatus status = asynSuccess;
 
-  jointActPos_ = rtde_receive.getActualQ();
+  jointActPos_ = rtde_receive_->getActualQ();
 
   /*
   // Read the moving status of this motor

@@ -58,8 +58,8 @@ public:
 private:
 //  char buff_[BUFF_SIZE];
   std::vector<double> jointActPos_;
-  RTDEControlInterface control_interface_;
-  RTDEReceiveInterface receive_interface_;
-  
+  RTDEControlInterface* rtde_control_;
+  RTDEReceiveInterface* rtde_receive_;
+
 friend class URAxis;
 };
