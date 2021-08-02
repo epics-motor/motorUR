@@ -10,6 +10,10 @@ DIRS += $(wildcard *App)
 DIRS += $(wildcard *Top)
 DIRS += $(wildcard iocBoot)
 
+ifeq ($(BUILD_IOCS), YES)
+DIRS += $(wildcard iocs)
+endif
+
 # The build order is controlled by these dependency rules:
 
 # All dirs except configure depend on configure
@@ -29,4 +33,10 @@ iocBoot_DEPEND_DIRS += $(filter %App,$(DIRS))
 
 # Add any additional dependency rules here:
 
-include $(TOP)/configure/RULES_TOP
+
+# Only support top-level targets when submodule is built stand-alone
+ifeq ($(INSTALL_LOCATION),$(MOTOR))
+  include $(TOP)/configure/RULES_DIRS
+else
+  include $(TOP)/configure/RULES_TOP
+endif

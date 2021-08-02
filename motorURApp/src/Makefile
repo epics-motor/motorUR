@@ -21,6 +21,9 @@ motorUR_SRCS += urRtdeDriver.cpp
 motorUR_LIBS += rtde
 motorUR_LIBS += $(EPICS_BASE_IOC_LIBS)
 
+motorUR_SYS_LIBS += boost_system
+motorUR_SYS_LIBS += boost_thread
+
 #===========================
 
 include $(TOP)/configure/RULES
