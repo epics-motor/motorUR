@@ -1,0 +1,8 @@
+# RELEASE - Location of external support modules
+
+# Use motor/module's generated release file when buidling inside motor
+-include $(TOP)/../../../RELEASE.$(EPICS_HOST_ARCH).local
+# Use motorUR's release file when building inside motorUR, but outside motor
+-include $(TOP)/../../configure/RELEASE.local
+# Use urIOC's RELEASE.local when building outside motorUR
+-include $(TOP)/configure/RELEASE.local
