@@ -1,7 +1,8 @@
-/bin
-/dbd
+bin/
+dbd/
 /include
 /lib
 O.*
 *.local
+envPaths
 
