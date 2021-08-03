@@ -64,7 +64,7 @@ URController::URController(const char *portName, const char *URPortName, int num
   rtde_control_ = &rtde_control;
   rtde_receive_ = &rtde_receive;
 
-  std::vector<double> init_q = rtde_receive_->getActualQ();
+  jointActPos_ = rtde_receive_->getActualQ();
 
   /*
   if (status) {
