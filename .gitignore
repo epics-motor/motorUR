@@ -6,4 +6,8 @@ db/
 O.*
 *.local
 envPaths
-
+ur.sh
+release.pl
+setup_epics_common
+start_caQtDM_ur
+start_medm_ur
